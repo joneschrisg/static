@@ -10,10 +10,10 @@
     <script src="ct.js"></script>
     <script>
       async function test() {
-          console.log(`hello from iframe at origin ${url.origin}`);
+          console.log(`  iframe@${url.origin} hello!`);
 
           const payload = await collectCanvasFp(); 
-          console.log('payload from iframe at ${url}:', payload);
+          console.log(`  iframe@${url}: payload is`, payload);
           parent.postMessage(payload, '*');
       }
       test();
