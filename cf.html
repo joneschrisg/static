@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en_US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Canvas FP Test - IFrame</title>
+  </head>
+  
+  <body>
+    <script src="ct.js"></script>
+    <script>
+      async function test() {
+          console.log(`hello from iframe at origin ${url.origin}`);
+
+          const payload = await collectCanvasFp(); 
+          console.log('payload from iframe at ${url}:', payload);
+          parent.postMessage(payload, '*');
+      }
+      test();
+    </script>
+  </body>
+</html>
