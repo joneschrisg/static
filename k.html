@@ -12,6 +12,7 @@
       // the targeted element.
       document.addEventListener('keydown', onKeyDown, true);
       document.addEventListener('keypress', onKeyPress, true);
+      document.addEventListener('blur', onBlur, true);
       // In modern browsers, we can use:
       /*
       const options = { capture: true, passive: true, };
@@ -26,6 +27,10 @@
 
       function onKeyPress(e) {
           console.log('keypress', e);
+      }
+
+      function onBlur(e) {
+          console.log('blur', e);
       }
     </script>
 
@@ -235,11 +240,11 @@ input:focus {
 <body>
   <div class="login">
     <h1>Hello</h1>
-    <form method="post" action="success.html">
+    <div>
       <input type="text" name="u" placeholder="Username" autocomplete="off" required="required" />
       <input type="password" name="p" placeholder="Password" required="required" />
-      <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
-    </form>
+      <button class="btn btn-primary btn-block btn-large">Login</button>
+    </div>
   </div>
 
   <div id="iframe-container">
